@@ -13,4 +13,8 @@ import { useCounterStore } from '~/stores/counter'
 import CounterDisplay from '~/components/CounterDisplay.vue'
 // Инициализируем Store
 const counter = useCounterStore()
+
+definePageMeta({
+  name: 'HomePage',
+})
 </script>
