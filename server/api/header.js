@@ -1,6 +1,6 @@
 export default defineEventHandler(() => {
   return {
     name: 'Annoncé',
-    logo: '/images/company-logo.png',
+    logo: '/assets/images/company-logo.png',
   }
 })
