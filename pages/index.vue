@@ -1,19 +1,13 @@
 <template>
-  <v-container grid-list-xs>
-    <h1>Home</h1>
-    <h1>Счетчик: {{ counter.count }}</h1>
-    <h2>Удвоенный счетчик: {{ counter.doubleCount }}</h2>
-    <v-btn @click="counter.increment">Увеличить</v-btn>
-    <CounterDisplay />
+  <v-container app grid-list-xs>
+    <AppCartCompany />
+    <AppCart />
   </v-container>
 </template>
 
 <script setup>
-import { useCounterStore } from '~/stores/counter'
-import CounterDisplay from '~/components/CounterDisplay.vue'
-// Инициализируем Store
-const counter = useCounterStore()
-
+import AppCartCompany from '@/components/AppCartCompany.vue'
+import AppCart from '@/components/AppCart.vue'
 definePageMeta({
   name: 'HomePage',
 })

@@ -1,5 +1,5 @@
 <template>
-  <div>footet</div>
+  <v-container grid-list-xs> footet </v-container>
 </template>
 
 <script setup></script>
