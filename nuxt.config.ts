@@ -13,6 +13,9 @@ export default defineNuxtConfig({
       })
     },
   ],
+  css: [
+    'vuetify/styles', // Подключаем стили Vuetify
+  ],
   build: {
     transpile: ['vuetify'],
   },
@@ -34,7 +37,15 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
+        },
+        {
+          rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap',
+        },
+        {
+          rel: 'stylesheet',
+          href: '/assets/style/normalize.css', // Подключение normalize.css
         },
       ],
     },
