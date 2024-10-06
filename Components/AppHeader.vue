@@ -12,7 +12,7 @@
       <v-toolbar-title
         @click="$router.push('/')"
         v-if="headerData.name"
-        class="header__name flex-0-0 d-flex align-center justify-center"
+        class="header__name flex-0-0 d-flex align-center justify-center pl-2 p6"
       >
         {{ headerData.name }}
       </v-toolbar-title>
@@ -21,14 +21,13 @@
         class="text-none rounded-pill"
         color="btnBg"
         min-height="48"
-        variant="tonal"
+        variant="flat"
       >
         <v-icon color="btnText" class="mr-1">mdi-view-grid-outline</v-icon>
         <span class="text-btnText">{{ headerData.btnLeft }}</span>
       </v-btn>
     </v-col>
 
-    <!-- придумать лучше решение -->
     <v-spacer></v-spacer>
 
     <v-btn color="btnColor" class="text-none">
@@ -42,7 +41,7 @@
       class="text-none rounded-pill pl-3 pr-1"
       color="btnBg"
       min-height="48"
-      variant="tonal"
+      variant="flat"
     >
       <v-icon color="btnText" class="mr-2">mdi mdi-menu</v-icon>
       <v-avatar size="40" :image="headerData.avatar"> </v-avatar>

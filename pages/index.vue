@@ -1,5 +1,5 @@
 <template>
-  <v-container app grid-list-xs>
+  <v-container app grid-list-xs class="pa-0">
     <AppCartCompany />
     <AppCart />
   </v-container>

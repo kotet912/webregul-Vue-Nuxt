@@ -14,9 +14,10 @@ export default defineNuxtPlugin((nuxtApp) => {
         light: {
           colors: {
             sandy: '#FFF7EB',
-            btnBg: '#455A64',
+            btnBg: '#E8E8E8',
             btnText: '#0F0F0F',
             bgGreen: '#337566',
+            colorText: '#F5F5F5',
           },
         },
       },
