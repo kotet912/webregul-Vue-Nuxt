@@ -1,16 +1,17 @@
 <template>
-  <NuxtLayout>
-    <v-app>
-      <AppHeader />
+  <v-app>
+    <AppHeader />
+    <NuxtLayout>
       <NuxtPage />
-      <AppFooter />
-    </v-app>
-  </NuxtLayout>
+    </NuxtLayout>
+    <AppFooter />
+  </v-app>
 </template>
 
 <script setup>
 import { useUserStore } from '@/stores/user'
 import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/AppFooter.vue'
 
 const userStore = useUserStore()
 userStore.init()
@@ -19,6 +20,7 @@ userStore.init()
 html {
   overflow-y: auto !important;
 }
+
 body {
   font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
