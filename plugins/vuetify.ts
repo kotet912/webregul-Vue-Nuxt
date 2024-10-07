@@ -18,6 +18,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             btnText: '#0F0F0F',
             bgGreen: '#337566',
             colorText: '#F5F5F5',
+            footerItem: '#6B6B6B',
           },
         },
       },
