@@ -1,5 +1,5 @@
 <template>
-  <v-card class="d-flex justify-center flex-column align-center ga-6" flat>
+  <v-card class="d-flex justify-center flex-column align-center ga-6 pb-6" flat>
     <v-img :src="aboutData.img" alt="Image" :width="120" cover :height="120" class="rounded-xl" />
     <v-col class="d-flex justify-center flex-column align-center pa-0">
       <v-card-title class="pa-0">{{ aboutData.name }}</v-card-title>
@@ -7,9 +7,7 @@
         <v-col>
           <v-row>
             <v-col class="d-flex ga-1 align-center pa-0 ga-1">
-              <v-icon color="bgGreen" v-if="aboutData.document" size="16"
-                >mdi mdi-check-decagram</v-icon
-              >
+              <v-icon color="bgGreen" v-if="aboutData.document" size="16">mdi mdi-check-decagram</v-icon>
               <span v-if="aboutData.document">Документы проверены</span>
               <v-icon size="16">mdi mdi-circle-medium</v-icon>
               <v-icon color="bgGreen" size="16">mdi mdi-star</v-icon>
@@ -22,30 +20,16 @@
       </v-card-text>
     </v-col>
     <v-col class="d-flex justify-center flex-column align-center ga-8 pa-0">
-      <v-btn
-        color="bgGreen"
-        class="text-body-2 px-5 text-nones"
-        variant="flat"
-        height="56"
-        style="border-radius: 12px"
-      >
-        <span color="colorText ">Показать номер телефона</span></v-btn
-      >
+      <v-btn color="bgGreen" class="text-body-2 px-5 text-nones" variant="flat" height="56" style="border-radius: 12px">
+        <span color="colorText ">Показать номер телефона</span></v-btn>
       <v-card-actions class="d-flex justify-center align-center ga-2 pa-0">
-        <v-btn
-          v-for="(item, index) in aboutData.buttons"
-          :key="index"
-          color="btnBg"
-          variant="flat"
-          min-height="40"
-          :class="{ 'active-btn': isActive(item.route).value }"
-          :to="item.route"
-          style="border-radius: 12px"
-        >
+        <v-btn v-for="(item, index) in aboutData.buttons" :key="index" color="btnBg" variant="flat" min-height="40"
+          :class="{ 'active-btn': isActive(item.route).value }" :to="item.route" style="border-radius: 12px">
           <span color="btnText">{{ item.name }}</span>
         </v-btn>
       </v-card-actions>
     </v-col>
+
   </v-card>
 </template>
 
