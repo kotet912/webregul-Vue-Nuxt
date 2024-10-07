@@ -17,8 +17,8 @@
     </v-row>
     <v-col class="pa-0">
       <v-row align="center" class="pa-4">
-        <v-col cols="3" v-for="(item, index) in 6" :key="index" class="pa-2">
-          <AppCart />
+        <v-col cols="3" v-for="product in products" :key="product.id">
+          <AppCart :product="product" />
         </v-col>
       </v-row>
     </v-col>
@@ -28,13 +28,19 @@
 <script setup>
 import AppCartCompany from '@/components/AppCartCompany.vue'
 import AppCart from '@/components/AppCart.vue'
-
+import { useAsyncData } from '#app'
 definePageMeta({
   name: 'HomePage',
 })
 
 // Данные для списка
 const items = ['Все товары и услуги', 'Товары', 'Услуги']
+
+const { data: products, error } = await useAsyncData('products', () => $fetch('/api/products'))
+
+if (error.value) {
+  console.error('Ошибка при получении данных продуктов:', error.value)
+}
 </script>
 
 <style>
