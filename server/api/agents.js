@@ -25,13 +25,13 @@ export default defineEventHandler(() => {
       description:
         'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться.',
       image: '/assets/images/agent3.png',
-      document: true,
+      document: false,
       rating: 4.3,
       reviewCount: 19,
     },
     {
       id: 4,
-      name: 'Фёдор Сумкин',
+      name: 'Василий Копушин',
       description:
         'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться.',
       image: '/assets/images/agent4.png',
@@ -41,17 +41,17 @@ export default defineEventHandler(() => {
     },
     {
       id: 5,
-      name: 'Фёдор Сумкин',
+      name: 'Феофан Кусакин',
       description:
         'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться.',
       image: '/assets/images/agent5.png',
-      document: true,
+      document: false,
       rating: 4.3,
       reviewCount: 19,
     },
     {
       id: 6,
-      name: 'Фёдор Сумкин',
+      name: 'Василиса Землеперекопская',
       description:
         'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться.',
       image: '/assets/images/agent6.png',

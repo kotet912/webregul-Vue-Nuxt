@@ -1,8 +1,12 @@
 <template>
   <v-container>
-    <v-row v-for="(agent, index) in agents" :key="index">
-      <AppCartAgent :agent="agent" />
-    </v-row>
+    <AppCartCompany />
+    <v-divider></v-divider>
+    <v-col class="pt-8 ga-3 d-flex flex-column">
+      <v-row v-for="(agent, index) in agents" :key="index">
+        <AppCartAgent :agent="agent" />
+      </v-row>
+    </v-col>
   </v-container>
 </template>
 
