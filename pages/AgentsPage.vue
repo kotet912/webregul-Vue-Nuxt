@@ -1,24 +1,21 @@
 <template>
-  <div>
-    <h1>agents</h1>
-  </div>
+  <v-container>
+    <v-row v-for="(agent, index) in agents" :key="index">
+      <AppCartAgent :agent="agent" />
+    </v-row>
+  </v-container>
 </template>
 
 <script setup>
-// В вашем компоненте или сторе
-import { useApiFetch } from '@/utils/api'
+import { useAsyncData } from '#app'
 
 definePageMeta({
   middleware: 'auth',
 })
 
-async function fetchProtectedData() {
-  try {
-    const response = await useApiFetch('/api/protected/data')
-    console.log(response.data)
-  } catch (error) {
-    console.error(error)
-    // Можно добавить перенаправление на логин или отображение сообщения об ошибке
-  }
+const { data: agents, error } = await useAsyncData('agents', () => $fetch('/api/agents'))
+
+if (error.value) {
+  console.error('Ошибка при получении данных продуктов:', error.value)
 }
 </script>

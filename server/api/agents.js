@@ -5,6 +5,7 @@ export default defineEventHandler(() => {
       name: 'Дмитрий Хитрый',
       description:
         'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться',
+      image: '/assets/images/agent1.png',
       document: true,
       rating: 4.3,
       reviewCount: 19,
@@ -13,6 +14,7 @@ export default defineEventHandler(() => {
       id: 2,
       name: 'Апполинарий Землеперекопский',
       description: 'Помог справиться с потерей и организовать похороны для 126 семей.',
+      image: '/assets/images/agent2.png',
       document: true,
       rating: false,
       reviewCount: false,
@@ -22,6 +24,37 @@ export default defineEventHandler(() => {
       name: 'Фёдор Сумкин',
       description:
         'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться.',
+      image: '/assets/images/agent3.png',
+      document: true,
+      rating: 4.3,
+      reviewCount: 19,
+    },
+    {
+      id: 4,
+      name: 'Фёдор Сумкин',
+      description:
+        'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться.',
+      image: '/assets/images/agent4.png',
+      document: true,
+      rating: 4.3,
+      reviewCount: 19,
+    },
+    {
+      id: 5,
+      name: 'Фёдор Сумкин',
+      description:
+        'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться.',
+      image: '/assets/images/agent5.png',
+      document: true,
+      rating: 4.3,
+      reviewCount: 19,
+    },
+    {
+      id: 6,
+      name: 'Фёдор Сумкин',
+      description:
+        'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться.',
+      image: '/assets/images/agent6.png',
       document: true,
       rating: 4.3,
       reviewCount: 19,
