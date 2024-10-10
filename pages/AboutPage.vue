@@ -1,7 +1,8 @@
 <template>
   <v-container app grid-list-xs class="pa-0" fluid v-if="aboutData">
     <AppCartCompany />
-    <v-divider></v-divider>
+    <!-- TODO: отдельно поместить к компоненту чтобы не повторялся -->
+    <v-divider class="hidden-sm-and-down"></v-divider>
     <v-row class="pt-8" justify="center" align="center">
       <v-col md="5" class="ga-3 d-flex flex-column px-6">
         <v-card flat>
