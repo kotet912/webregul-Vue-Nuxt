@@ -9,6 +9,9 @@
     flat
   >
     <v-col class="d-flex ga-3">
+      <v-app-bar-nav-icon class="hidden-lg-and-up"></v-app-bar-nav-icon>
+      <v-spacer class="hidden-sm-and-up pr-15"></v-spacer>
+
       <v-toolbar-title
         @click="$router.push('/')"
         v-if="headerData.name"
@@ -18,7 +21,7 @@
       </v-toolbar-title>
       <v-btn
         v-if="headerData.btnLeft"
-        class="text-none rounded-pill"
+        class="text-none rounded-pill hidden-md-and-down"
         color="btnBg"
         min-height="48"
         variant="flat"
@@ -30,15 +33,16 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn color="btnColor" class="text-none">
+    <v-icon size="24" class="pa-6 hidden-lg-and-up">mdi mdi-shopping-outline</v-icon>
+    <v-btn color="btnColor" class="text-none hidden-md-and-down">
       <v-icon size="16">mdi mdi-map-marker</v-icon>
       {{ headerData.geolocation }}
     </v-btn>
-    <div class="header__rectangle"></div>
-    <v-btn color="bgGreen" class="text-none"> Разместить объявление </v-btn>
+    <div class="header__rectangle hidden-md-and-down"></div>
+    <v-btn color="bgGreen" class="text-none hidden-md-and-down"> Разместить объявление </v-btn>
     <v-btn
       v-if="headerData.btnLeft"
-      class="text-none rounded-pill pl-3 pr-1"
+      class="text-none rounded-pill pl-3 pr-1 hidden-md-and-down"
       color="btnBg"
       min-height="48"
       variant="flat"
