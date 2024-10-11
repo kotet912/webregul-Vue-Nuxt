@@ -19,7 +19,7 @@
         {{ product.shows }} дня
       </v-chip>
     </v-row>
-    <v-col class="pa-0 pt-4">
+    <v-col class="pa-0 pt-4 mt-auto">
       <v-col class="pa-0 px-1 pb-2">
         <v-card-title class="pa-0 text-body-1" color="btnText"
           >{{ product.price }} ₽ {{ product.prefix ? product.prefix : '' }}</v-card-title
@@ -32,8 +32,8 @@
           >Объявление продвигается</v-btn
         >
         <v-col v-else-if="product.status && !product.move">
-          <v-row align="center" justify="space-between" class="ga-3">
-            <span class="text-caption opacity-70">Увеличьте количество просмотров</span>
+          <v-row align="center" justify="space-between" class="ga-3 flex-nowrap">
+            <span class="text-caption opacity-70 flex-wrap">Увеличьте количество просмотров</span>
             <v-btn color="bgGreen" class="text-body-2" style="border-radius: 12px" variant="flat"
               >Продвигать</v-btn
             >
