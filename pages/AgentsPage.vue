@@ -3,7 +3,7 @@
     <AppCartCompany />
     <!-- TODO: отдельно поместить к компоненту чтобы не повторялся -->
     <v-divider class="hidden-sm-and-down"></v-divider>
-    <v-row class="pt-8" justify="center" align="center">
+    <v-row class="py-8" justify="center" align="center">
       <v-col class="ga-3 d-flex flex-column">
         <v-row v-for="(agent, index) in agents" :key="index">
           <AppCartAgent :agent="agent" />
@@ -17,7 +17,7 @@
 import { useAsyncData } from '#app'
 
 definePageMeta({
-  middleware: 'auth',
+  // middleware: 'auth',
 })
 
 const { data: agents, error } = await useAsyncData('agents', () => $fetch('/api/agents'))

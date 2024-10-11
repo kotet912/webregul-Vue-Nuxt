@@ -18,7 +18,7 @@
       </v-card-actions>
       <v-divider></v-divider>
     </v-col>
-    <v-col :class="{ 'hidden-sm-and-down': $route.path === '/' }">
+    <v-col :class="{ 'hidden-sm-and-down': $route.path === '/' || '/agentsPage' }">
       <v-img
         :src="aboutData.img"
         alt="Image"
