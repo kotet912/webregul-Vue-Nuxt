@@ -22,7 +22,7 @@
         >
           <!-- Слот для отображения каждого элемента в списке -->
           <template v-slot:item="{ item, props }">
-            <v-list-item v-bind="props" class="item-custom">
+            <v-list-item v-bind="props" class="item-custom" color="#F5F5F5">
               <!-- Добавляем иконку галочки для выбранного элемента -->
               <v-icon v-if="selectedItem === item.value" color="bgGreen" class="ml-auto"
                 >mdi-check</v-icon
@@ -101,5 +101,17 @@ if (error.value) {
 }
 .item-custom .v-list-item__content {
   display: flex;
+}
+
+.item-custom .v-list-item--active {
+  background-color: transparent !important;
+}
+
+.item-custom .v-list-item-title {
+  color: #0f0f0f !important;
+}
+
+.item-custom .v-list-item__content {
+  display: flex !important;
 }
 </style>
