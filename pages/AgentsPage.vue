@@ -17,7 +17,7 @@
 import { useAsyncData } from '#app'
 
 definePageMeta({
-  // middleware: 'auth',
+  middleware: 'auth',
 })
 
 const { data: agents, error } = await useAsyncData('agents', () => $fetch('/api/agents'))

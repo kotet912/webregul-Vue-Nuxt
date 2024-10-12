@@ -10,7 +10,7 @@ export default defineEventHandler(async () => {
       'Копкой занимаемся 15 лет. Все началось с хобби и плавно переросло в любимую работу. Работаем с\nпрофессиональной техникой.',
     time: ['Режим работы', 'Сегодня с 8:00 до 23:00'],
     geo: ['Местоположение', 'Ростов на Дону, Воронежская ул., 42А корп. 1'],
-    map: '/assets/images/map.png',
+    map: ['/assets/images/map.png', '/assets/images/map2.png'],
     document: true,
     rating: 4.7,
     reviewCount: 19,

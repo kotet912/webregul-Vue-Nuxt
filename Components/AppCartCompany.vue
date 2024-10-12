@@ -1,5 +1,5 @@
 <template>
-  <v-card class="d-flex justify-center flex-column align-center ga-6 pb-6" flat>
+  <v-card class="d-flex justify-center flex-column align-center ga-6 pb-md-6" flat>
     <!-- TODO: можно вынести в отдельный компонент -->
     <v-col class="ga-8 pa-0 hidden-md-and-up">
       <v-card-actions class="ga-2 pa-0 px-6 overflow-scroll">
@@ -18,7 +18,7 @@
       </v-card-actions>
       <v-divider></v-divider>
     </v-col>
-    <v-col :class="{ 'hidden-sm-and-down': $route.path === '/' || '/agentsPage' }">
+    <v-col :class="{ 'hidden-sm-and-down pa-0': $route.path !== '/aboutPage' }">
       <v-img
         :src="aboutData.img"
         alt="Image"
@@ -27,7 +27,7 @@
         :height="120"
         class="rounded-xl mx-auto"
       />
-      <v-col class="d-flex justify-center flex-column align-center pa-0">
+      <v-col class="d-flex justify-center flex-column align-center pa-0 pt-5">
         <v-card-title class="pa-0 text-h5 font-weight-bold">{{ aboutData.name }}</v-card-title>
         <v-card-text class="pa-0 ga-3">
           <v-col>
