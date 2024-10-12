@@ -1,7 +1,7 @@
 <template>
-  <v-col cols="11" md="6" sm="10" class="mx-auto pa-0">
-    <v-card flat color="#F5F5F5" class="rounded-xl">
-      <v-row class="ma-0 flex-nowrap hidden-md-and-down">
+  <v-col cols="12" md="6" sm="10" class="mx-auto pa-0">
+    <v-card flat color="#F5F5F5" class=" rounded-custom">
+      <v-row class="ma-0 flex-nowrap hidden-sm-and-down">
         <v-col flat class="ma-auto w-auto flex-0-0">
           <v-img
             :src="agent.image"
@@ -40,7 +40,7 @@
 
       <!-- мобильный вариант -->
       <!-- это не лучший вариант... -->
-      <v-row class="ma-0 hidden-lg-and-up">
+      <v-row class="ma-0 hidden-md-and-up">
         <v-col>
           <v-row class="ma-0 flex-nowrap">
             <v-img
@@ -97,3 +97,14 @@ const props = defineProps({
   },
 })
 </script>
+<style scoped>
+
+.rounded-custom{
+  border-radius: 20px;
+}
+@media (max-width: 600px) {
+  .rounded-custom{
+  border-radius: 16px;
+}
+}
+</style>

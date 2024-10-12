@@ -3,8 +3,8 @@
     <AppCartCompany />
     <!-- TODO: отдельно поместить к компоненту чтобы не повторялся -->
     <v-divider class="hidden-sm-and-down"></v-divider>
-    <v-row class="py-8" justify="center" align="center">
-      <v-col class="ga-3 d-flex flex-column">
+    <v-row class="pa-0 py-8" justify="center" align="center">
+      <v-col class="ga-md-3 d-flex flex-column pa-0">
         <v-row v-for="(agent, index) in agents" :key="index">
           <AppCartAgent :agent="agent" />
         </v-row>

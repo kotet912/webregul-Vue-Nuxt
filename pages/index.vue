@@ -3,7 +3,7 @@
     <AppCartCompany />
     <!-- TODO: отдельно поместить к компоненту чтобы не повторялся -->
     <v-divider class="hidden-sm-and-down"></v-divider>
-    <v-row justify="center" align="center">
+    <v-row justify="center" align="center" no-gutters>
       <v-col cols="12" lg="3" md="4" sm="6" xs="12" class="pa-0 px-7">
         <v-select
           :items="items"
@@ -17,8 +17,8 @@
       </v-col>
     </v-row>
     <v-col class="pa-0">
-      <v-row align="center" class="pa-4">
-        <v-col cols="12" lg="3" md="3" sm="6" xs="12" v-for="product in products" :key="product.id">
+      <v-row align="stretch" class="pa-0 pa-md-4 ma-0 mx-auto">
+        <v-col cols="12" lg="3" md="3" sm="6" xs="12" class="h-100 mx-auto" v-for="product in products" :key="product.id">
           <AppCart :product="product" />
         </v-col>
       </v-row>
