@@ -25,23 +25,25 @@
             {{ aboutData.time[1] }}
           </v-card-text>
         </v-card>
-        <v-card flat class="d-flex justify-space-between align-center flex-column flex-sm-row">
-          <v-col class="pa-0 w-md-auto " order="1" order-sm="0">
+        <v-col flat >
+          <v-row class=" justify-space-between align-center flex-column flex-md-row ">
+          <v-col  class="pa-0 " order="1" order-md="0">
             <v-card-title class="text-body-1 text-lg-h5 font-weight-bold">
               {{ aboutData.geo[0] }}
             </v-card-title>
 
             <v-card-text >
-              <div class="text-body-2 text-lg-body-1  text-bgGreen w-100 w-md-75">
+              <div class="text-body-2 text-lg-body-1  text-bgGreen w-100 ">
                 {{ aboutData.geo[1] }}
               </div>
             </v-card-text>
-          </v-col>
-          <v-col flat class="w-md-auto flex-0-0 pa-0">
+          </v-col >
+          <v-col flat class=" pa-0 "  md="5">
             <!-- скругление 12px переделать -->
-            <v-img :width="smAndDown ? '100%' : '150'" :class="smAndDown ? 'rounded-t-xl' : 'rounded-e-xl' " cover :src="smAndDown ? aboutData.map[1] : aboutData.map[0]"> </v-img>
+            <v-img :width="smAndDown ? '' : '150'" :height="mdAndDown ? 'auto' : '132'" :class="smAndDown ? 'rounded-t-xl' : 'rounded-e-xl' +  ' ml-auto w-auto' " cover :src="smAndDown ? aboutData.map[1] : aboutData.map[0]"> </v-img>
           </v-col>
-        </v-card>
+          </v-row>
+        </v-col>
       </v-col>
     </v-row>
   </v-container>
@@ -54,7 +56,7 @@
 <script setup>
 import { useDisplay } from 'vuetify'
 
-const { smAndDown } = useDisplay()
+const { smAndDown,mdAndDown } = useDisplay()
 const { data: aboutData, error } = useFetch('/api/about')
 
 if (error.value) {
