@@ -1,5 +1,5 @@
 <template>
-  <v-card-actions :class="classList" class="ga-3 pa-0 px-4 overflow-scroll">
+  <v-card-actions :class="classList" class="ga-3 pa-0 px-4">
     <v-btn
       v-for="(item, index) in buttons"
       :key="index"
