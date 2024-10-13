@@ -24,14 +24,14 @@
         <v-card-title class="pa-0 pb-1 text-h5 font-weight-bold custom-letter-spacing">{{
           aboutData.name
         }}</v-card-title>
-        <v-row class="pa-0 d-flex justify-start w-md-25 ma-0">
+        <v-row class="pa-0 d-flex justify-start ma-0 mr-md-3">
           <v-col class="pa-0 align-center d-flex" style="font-size: 15px">
             <v-icon color="bgGreen" v-if="aboutData.document" size="18" style="padding-right: 2px"
               >mdi mdi-check-decagram</v-icon
             >
             <span
               v-if="aboutData.document"
-              class="text-none font-weight-regular pr-1 hidden-sm-and-down"
+              class="text-none font-weight-regular text-no-wrap pr-1 hidden-sm-and-down"
               >{{ documents[0] }}</span
             >
             <span v-if="aboutData.document" class="pr-1 hidden-md-and-up">{{ documents[1] }}</span>
@@ -41,7 +41,9 @@
               {{ aboutData.rating }}
             </span>
             <v-icon size="16" class="">mdi mdi-circle-medium</v-icon>
-            <span style="padding-left: 2px"> {{ aboutData.reviewCount }} {{ textReview }} </span>
+            <span style="padding-left: 2px" class="text-no-wrap">
+              {{ aboutData.reviewCount }} {{ textReview }}
+            </span>
           </v-col>
         </v-row>
       </v-col>
