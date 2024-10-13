@@ -27,4 +27,8 @@ body {
   font-weight: 500;
   font-style: normal;
 }
+.text-body-2,
+.text-lg-body-1 {
+  font-family: 'Inter', sans-serif;
+}
 </style>
