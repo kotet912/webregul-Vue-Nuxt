@@ -1,11 +1,11 @@
 <template>
   <v-footer
     fluid
-    class="bg-grey-lighten-4 pb-6 pb-md-0 pa-0 border-t-thin"
+    class="bg-grey-lighten-4 pb-6 pb-md-0 pa-0 border-t-thin flex-0-0 align-start"
     :height="mdAndDown ? 'auto' : '88'"
   >
     <v-row
-      class="ga-4 ga-md-5 pa-4 pt-5 pa-md-0 px-md-8 ma-0 mt-md-n4 align-sm-center flex-column flex-sm-row"
+      class="ga-4 ga-md-5 pa-4 pt-5 pa-md-0 px-md-8 ma-0 pt-md-5 align-sm-center flex-column flex-sm-row"
     >
       <span
         v-for="(item, index) in footerDate"

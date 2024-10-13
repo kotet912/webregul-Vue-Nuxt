@@ -1,25 +1,15 @@
 <template>
   <v-card class="d-flex justify-center flex-column align-center ga-6 pb-md-7" flat>
-    <!-- TODO: можно вынести в отдельный компонент -->
+    <!-- Компонент для мобильных устройств -->
     <v-col class="ga-8 pa-0 hidden-md-and-up">
-      <v-card-actions class="ga-3 pa-0 px-4 overflow-scroll min-h-56">
-        <v-btn
-          v-for="(item, index) in aboutData.buttons"
-          :key="index"
-          color="btnBg"
-          variant="flat"
-          min-height="40"
-          :class="[{ 'active-btn': isActive(item.route).value }, 'px-3']"
-          :to="item.route"
-          style="border-radius: 12px"
-        >
-          <span color="btnText" class="text-none custom-text font-weight-medium">{{
-            item.name
-          }}</span>
-        </v-btn>
-      </v-card-actions>
+      <ButtonList
+        :buttons="aboutData.buttons"
+        :isActive="isActive"
+        classList="ga-3 pa-0 px-4 overflow-scroll min-h-56"
+      />
       <v-divider style="margin-top: -1px"></v-divider>
     </v-col>
+
     <v-col :class="[$route.path !== '/aboutPage' ? 'hidden-sm-and-down' : '', 'pa-0']">
       <v-img
         :src="aboutData.img"
@@ -36,25 +26,26 @@
         }}</v-card-title>
         <v-row class="pa-0 d-flex justify-start w-md-25 ma-0">
           <v-col class="pa-0 align-center d-flex" style="font-size: 15px">
-            <v-icon color="bgGreen" v-if="aboutData.document" size="18"
+            <v-icon color="bgGreen" v-if="aboutData.document" size="18" style="padding-right: 2px"
               >mdi mdi-check-decagram</v-icon
             >
             <span
               v-if="aboutData.document"
               class="text-none font-weight-regular pr-1 hidden-sm-and-down"
-              >Документы проверены</span
+              >{{ documents[0] }}</span
             >
-            <span v-if="aboutData.document" class="pr-1 hidden-md-and-up">Проверен</span>
+            <span v-if="aboutData.document" class="pr-1 hidden-md-and-up">{{ documents[1] }}</span>
             <v-icon size="16" class="mx-n1">mdi mdi-circle-medium</v-icon>
             <v-icon color="bgGreen" size="20" class="ml-1">mdi mdi-star</v-icon>
             <span style="padding-left: 2px">
               {{ aboutData.rating }}
             </span>
             <v-icon size="16" class="">mdi mdi-circle-medium</v-icon>
-            <span style="padding-left: 2px"> {{ aboutData.reviewCount }} отзывов </span>
+            <span style="padding-left: 2px"> {{ aboutData.reviewCount }} {{ textReview }} </span>
           </v-col>
         </v-row>
       </v-col>
+
       <v-col class="d-flex justify-center flex-column align-center ga-6 pa-0 mt-6">
         <v-btn
           color="bgGreen"
@@ -63,33 +54,28 @@
           height="56"
           style="border-radius: 12px"
         >
-          <span color="colorText ">Показать номер телефона</span></v-btn
+          <span color="colorText ">{{ textPhone }}</span></v-btn
         >
-        <!-- TODO: можно вынести в отдельный компонент -->
-        <v-card-actions class="ga-2 pa-0 hidden-sm-and-down">
-          <v-btn
-            v-for="(item, index) in aboutData.buttons"
-            :key="index"
-            color="btnBg"
-            variant="flat"
-            min-height="40"
-            :class="[{ 'active-btn': isActive(item.route).value }, 'px-3']"
-            :to="item.route"
-            style="border-radius: 12px"
-          >
-            <span color="btnText" class="text-none custom-text font-weight-medium">{{
-              item.name
-            }}</span>
-          </v-btn>
-        </v-card-actions>
+
+        <!-- Компонент для десктопных устройств -->
+        <ButtonList
+          :buttons="aboutData.buttons"
+          :isActive="isActive"
+          classList="ga-2 pa-0 hidden-sm-and-down"
+        />
       </v-col>
     </v-col>
   </v-card>
 </template>
 
 <script setup>
+import ButtonList from '@/components/ButtonList.vue'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
+
+const documents = ['Документы проверены', 'Проверен']
+const textPhone = 'Показать номер телефона'
+const textReview = 'отзывов'
 
 const { data: aboutData, error } = await useAsyncData('about', () => $fetch('/api/about'))
 const route = useRoute()

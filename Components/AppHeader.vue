@@ -16,7 +16,7 @@
       <v-toolbar-title
         @click="$router.push('/')"
         v-if="headerData.name"
-        class="header__name flex-0-0 d-flex align-center justify-center pl-2 p6 cursor-pointer"
+        class="header__name flex-0-0 d-flex align-center justify-center pl-2 pl-md-3 cursor-pointer"
       >
         {{ headerData.name }}
       </v-toolbar-title>
@@ -27,7 +27,7 @@
         min-height="48"
         variant="flat"
       >
-        <v-icon color="btnText" size="24" class="mr-2 pl-1">mdi-view-grid-outline</v-icon>
+        <v-icon color="btnText" size="24" class="mr-1 pl-1">mdi-view-grid-outline</v-icon>
         <span class="text-btnText">{{ headerData.btnLeft }}</span>
       </v-btn>
     </v-col>
@@ -44,7 +44,7 @@
       color="bgGreen"
       class="text-none mr-5 pl-3 text-subtitle-1 custom-letter-spacing hidden-md-and-down"
     >
-      Разместить объявление
+      {{ textPalaceAd }}
     </v-btn>
     <v-btn
       v-if="headerData.btnLeft"
@@ -63,6 +63,8 @@
 <script setup>
 import { useAsyncData } from '#app'
 import { useDisplay } from 'vuetify'
+
+const textPalaceAd = 'Разместить объявление'
 
 const { smAndDown } = useDisplay()
 const { data: headerData, error } = await useAsyncData('header', () => $fetch('/api/header'))

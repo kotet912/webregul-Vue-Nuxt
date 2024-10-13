@@ -1,6 +1,6 @@
 <template>
-  <v-col cols="12" md="6" sm="10" class="mx-auto pa-0">
-    <v-card flat color="#F5F5F5" class=" rounded-custom">
+  <v-col cols="12" md="6" sm="10" class="ma-0 mx-auto pa-0">
+    <v-card flat color="#F5F5F5" class="rounded-custom">
       <v-row class="ma-0 flex-nowrap hidden-sm-and-down">
         <v-col flat class="ma-auto w-auto flex-0-0">
           <v-img
@@ -23,13 +23,13 @@
               <v-icon color="bgGreen" v-if="agent.document" size="16"
                 >mdi mdi-check-decagram</v-icon
               >
-              <span v-if="agent.document" class="hidden-md-and-down">Документы проверены</span>
-              <span v-if="agent.document" class="hidden-lg-and-up">Проверен</span>
+              <span v-if="agent.document" class="hidden-md-and-down">{{ documents[0] }}</span>
+              <span v-if="agent.document" class="hidden-lg-and-up">{{ documents[1] }}</span>
               <v-icon v-if="agent.document" size="16">mdi mdi-circle-medium</v-icon>
               <v-icon v-if="agent.rating" color="bgGreen" size="16">mdi mdi-star</v-icon>
               {{ agent.rating ? agent.rating : '' }}
               <v-icon v-if="agent.rating" size="16">mdi mdi-circle-medium</v-icon>
-              {{ agent.reviewCount ? agent.reviewCount : 'Нет' }} отзывов
+              {{ agent.reviewCount ? agent.reviewCount : 'Нет' }} {{ textReview }}
             </v-col>
 
             <!-- d-inline-block text-truncate не срабатывает нормально -->
@@ -62,13 +62,13 @@
                 <v-icon color="bgGreen" v-if="agent.document" size="16"
                   >mdi mdi-check-decagram</v-icon
                 >
-                <span v-if="agent.document" class="hidden-md-and-down">Документы проверены</span>
-                <span v-if="agent.document" class="hidden-lg-and-up mx-1">Проверен</span>
+                <span v-if="agent.document" class="hidden-md-and-down">{{ documents[0] }}</span>
+                <span v-if="agent.document" class="hidden-lg-and-up mx-1">{{ documents[1] }}</span>
                 <v-icon v-if="agent.document" size="16">mdi mdi-circle-medium</v-icon>
                 <v-icon v-if="agent.rating" color="bgGreen mx-1" size="16">mdi mdi-star</v-icon>
                 {{ agent.rating ? agent.rating : '' }}
                 <v-icon v-if="agent.rating" size="16">mdi mdi-circle-medium</v-icon>
-                {{ agent.reviewCount ? agent.reviewCount : 'Нет' }} отзывов
+                {{ agent.reviewCount ? agent.reviewCount : 'Нет' }} {{ textReview }}
               </v-col>
             </v-col>
           </v-row>
@@ -88,6 +88,9 @@
 import { defineProps } from 'vue'
 import { useDisplay } from 'vuetify'
 
+const documents = ['Документы проверены', 'Проверен']
+const textReview = 'отзывов'
+
 const { smAndDown } = useDisplay()
 
 const props = defineProps({
@@ -98,13 +101,12 @@ const props = defineProps({
 })
 </script>
 <style scoped>
-
-.rounded-custom{
+.rounded-custom {
   border-radius: 20px;
 }
 @media (max-width: 600px) {
-  .rounded-custom{
-  border-radius: 16px;
-}
+  .rounded-custom {
+    border-radius: 16px;
+  }
 }
 </style>
