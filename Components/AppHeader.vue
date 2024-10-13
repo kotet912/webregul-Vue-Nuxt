@@ -1,16 +1,17 @@
 <template>
   <v-app-bar
     color="sandy"
-    class="position-relative px-5"
+    class="position-relative pa-0 px-md-5"
     scroll-behavior="hide elevate"
     floating
     dark
     v-if="headerData"
     flat
+    :height="smAndDown ? 56 : 64"
   >
-    <v-col class="d-flex ga-9">
+    <v-col class="d-flex ga-9 pa-0 pl-1 pa-md-2">
       <v-app-bar-nav-icon class="hidden-lg-and-up"></v-app-bar-nav-icon>
-      <v-spacer class="hidden-sm-and-up pr-15"></v-spacer>
+      <v-spacer class="hidden-sm-and-up pr-4"></v-spacer>
 
       <v-toolbar-title
         @click="$router.push('/')"
@@ -26,20 +27,23 @@
         min-height="48"
         variant="flat"
       >
-        <v-icon color="btnText" size="24" class="mr-1 pl-1">mdi-view-grid-outline</v-icon>
+        <v-icon color="btnText" size="24" class="mr-2 pl-1">mdi-view-grid-outline</v-icon>
         <span class="text-btnText">{{ headerData.btnLeft }}</span>
       </v-btn>
     </v-col>
 
     <v-spacer></v-spacer>
 
-    <v-icon size="24" class="pa-6 hidden-lg-and-up">mdi mdi-shopping-outline</v-icon>
+    <v-icon size="24" class="pr-7 hidden-lg-and-up">mdi mdi-shopping-outline</v-icon>
     <v-btn color="btnColor" class="text-none text-subtitle-1 pr-2 hidden-md-and-down">
-      <v-icon size="16" class="pr-1">mdi mdi-map-marker</v-icon>
+      <v-icon size="16" class="pr-0">mdi mdi-map-marker</v-icon>
       {{ headerData.geolocation }}
     </v-btn>
     <div class="header__rectangle hidden-md-and-down"></div>
-    <v-btn color="bgGreen" class="text-none mr-4 pl-2 text-subtitle-1 hidden-md-and-down">
+    <v-btn
+      color="bgGreen"
+      class="text-none mr-5 pl-3 text-subtitle-1 custom-letter-spacing hidden-md-and-down"
+    >
       Разместить объявление
     </v-btn>
     <v-btn
@@ -58,7 +62,9 @@
 
 <script setup>
 import { useAsyncData } from '#app'
+import { useDisplay } from 'vuetify'
 
+const { smAndDown } = useDisplay()
 const { data: headerData, error } = await useAsyncData('header', () => $fetch('/api/header'))
 
 if (error.value) {
@@ -83,5 +89,8 @@ if (error.value) {
   flex-grow: 0;
   margin: 0px 24px;
   background: rgb(204, 204, 204);
+}
+.custom-letter-spacing {
+  letter-spacing: -0.01em !important;
 }
 </style>

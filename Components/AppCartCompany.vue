@@ -2,21 +2,23 @@
   <v-card class="d-flex justify-center flex-column align-center ga-6 pb-md-7" flat>
     <!-- TODO: можно вынести в отдельный компонент -->
     <v-col class="ga-8 pa-0 hidden-md-and-up">
-      <v-card-actions class="ga-2 pa-0 px-6 overflow-scroll">
+      <v-card-actions class="ga-3 pa-0 px-4 overflow-scroll min-h-56">
         <v-btn
           v-for="(item, index) in aboutData.buttons"
           :key="index"
           color="btnBg"
           variant="flat"
           min-height="40"
-          :class="{ 'active-btn': isActive(item.route).value }"
+          :class="[{ 'active-btn': isActive(item.route).value }, 'px-3']"
           :to="item.route"
           style="border-radius: 12px"
         >
-          <span color="btnText" class="text-subtitle-1 font-weight-bold">{{ item.name }}</span>
+          <span color="btnText" class="text-none custom-text font-weight-medium">{{
+            item.name
+          }}</span>
         </v-btn>
       </v-card-actions>
-      <v-divider></v-divider>
+      <v-divider style="margin-top: -1px"></v-divider>
     </v-col>
     <v-col :class="[$route.path !== '/aboutPage' ? 'hidden-sm-and-down' : '', 'pa-0']">
       <v-img
@@ -32,7 +34,7 @@
         <v-card-title class="pa-0 pb-1 text-h5 font-weight-bold custom-letter-spacing">{{
           aboutData.name
         }}</v-card-title>
-        <v-row class="pa-0 d-flex justify-start w-25 ma-0">
+        <v-row class="pa-0 d-flex justify-start w-md-25 ma-0">
           <v-col class="pa-0 align-center d-flex" style="font-size: 15px">
             <v-icon color="bgGreen" v-if="aboutData.document" size="18"
               >mdi mdi-check-decagram</v-icon
@@ -42,7 +44,7 @@
               class="text-none font-weight-regular pr-1 hidden-sm-and-down"
               >Документы проверены</span
             >
-            <span v-if="aboutData.document" class="hidden-md-and-up">Проверен</span>
+            <span v-if="aboutData.document" class="pr-1 hidden-md-and-up">Проверен</span>
             <v-icon size="16" class="mx-n1">mdi mdi-circle-medium</v-icon>
             <v-icon color="bgGreen" size="20" class="ml-1">mdi mdi-star</v-icon>
             <span style="padding-left: 2px">
@@ -98,7 +100,7 @@ if (error.value) {
 
 const isActive = (buttonRoute) => computed(() => route.path === buttonRoute)
 </script>
-<style>
+<style scoped>
 .active-btn {
   border: 1px solid #0f0f0f !important;
 }
@@ -110,5 +112,8 @@ const isActive = (buttonRoute) => computed(() => route.path === buttonRoute)
   line-height: 24px;
   letter-spacing: 0 !important;
   text-align: center;
+}
+.min-h-56.v-card-actions {
+  min-height: 56px;
 }
 </style>
