@@ -6,6 +6,7 @@
     <v-col class="pa-0">
       <v-row align="stretch" class="pa-0 pa-md-4 ma-0 mx-auto">
         <v-col
+          v-if="products"
           cols="12"
           lg="3"
           md="3"
@@ -17,6 +18,7 @@
         >
           <AppCart :product="product" />
         </v-col>
+        <div v-else>Загрузка...</div>
       </v-row>
     </v-col>
   </v-container>

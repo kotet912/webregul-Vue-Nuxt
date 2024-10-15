@@ -1,5 +1,5 @@
 <template>
-  <v-row class="pb-9 pb-md-12 pt-md-10 ma-0" justify="center" align="center">
+  <v-row v-if="aboutData" class="pb-9 pb-md-12 pt-md-10 ma-0" justify="center" align="center">
     <v-col md="5" class="ga-3 d-flex flex-column px-0 px-md-6 pt-3 py-md-0">
       <v-card flat>
         <v-card-title class="text-h6 text-lg-h5 font-weight-bold pb-1">
@@ -58,6 +58,7 @@
       </v-col>
     </v-col>
   </v-row>
+  <div v-else>Загрузка...</div>
 </template>
 
 <script setup>

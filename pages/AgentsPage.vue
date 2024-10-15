@@ -1,5 +1,5 @@
 <template>
-  <v-container app grid-list-xs class="pa-0" fluid>
+  <v-container v-if="agents" app grid-list-xs class="pa-0" fluid>
     <AppCartCompany />
     <v-divider class="hidden-sm-and-down"></v-divider>
     <v-row class="pa-0 py-6 py-md-8 pb-12 ma-0" justify="center" align="center">
@@ -10,6 +10,7 @@
       </v-col>
     </v-row>
   </v-container>
+  <div v-else>Загрузка...</div>
 </template>
 
 <script setup>

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="d-flex justify-center flex-column align-center ga-6 pb-md-7" flat>
+  <v-card v-if="aboutData" class="d-flex justify-center flex-column align-center ga-6 pb-md-7" flat>
     <!-- Компонент для мобильных устройств -->
     <v-col class="ga-8 pa-0 hidden-md-and-up">
       <ButtonList
@@ -68,6 +68,7 @@
       </v-col>
     </v-col>
   </v-card>
+  <div v-else>Загрузка...</div>
 </template>
 
 <script setup>
