@@ -21,7 +21,7 @@
         {{ item.text }}
       </span>
       <v-btn
-        variant="text"
+        variant="flat"
         class="ml-1 pa-0 text-body-2 justify-start hidden-sm-and-up bg-grey-lighten-4"
         to="/"
         v-for="(item, index) in lang"
