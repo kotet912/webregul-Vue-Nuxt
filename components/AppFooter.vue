@@ -22,13 +22,13 @@
       </span>
       <v-btn
         variant="text"
-        class="mx-4 mx-md-2 text-none w-0 hidden-sm-and-up"
+        class="ml-1 pa-0 text-body-2 justify-start hidden-sm-and-up bg-grey-lighten-4"
         to="/"
         v-for="(item, index) in lang"
         :key="index"
         :v-if="item.status === true"
       >
-        <v-img :src="item.img" alt="altText" height="17" width="17" class="mt-1 mr-1"></v-img
+        <v-img :src="item.img" alt="altText" height="17" width="17" class="mt-1 mr-1 pr-1"></v-img
         >{{ item.text }}</v-btn
       >
     </v-row>
